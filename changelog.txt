@@ -33,3 +33,7 @@
    e.g. public function MarketPlaceController_Name_Create($Sender){}
  - correction on theme views /yourtheme/plugins/MarketPlace/view.php
   0.1.9b
+ - 2.1
+  0.2.0b
+ - MerchantID link fix 
+ - Paypal SSL fix

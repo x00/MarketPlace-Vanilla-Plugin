@@ -29,7 +29,8 @@ class IpnChecker {
         curl_setopt($NotifyHandler, CURLOPT_POSTFIELDS, 'cmd=_notify-validate&'.$Post);
         curl_setopt($NotifyHandler, CURLOPT_RETURNTRANSFER, TRUE);
         curl_setopt($NotifyHandler, CURLOPT_HEADER, TRUE);
-        curl_setopt($NotifyHandler, CURLOPT_SSLVERSION, 3);
+        if(defined('CURL_SSLVERSION_TLSv1') && $this->Secure)
+            curl_setopt($NotifyHandler, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);
 
         $Response = curl_exec($NotifyHandler);
         list($Header, $Body) = explode("\r\n\r\n", $Response, 2);

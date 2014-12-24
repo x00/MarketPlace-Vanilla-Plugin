@@ -4,7 +4,7 @@ $PluginInfo['MarketPlace'] = array(
    'Name' => 'MarketPlace',
    'Description' => "Product, store and gateway system",
    'SettingsUrl' => '/dashboard/settings/marketplace',
-   'Version' => '0.1.9b',
+   'Version' => '0.2.0b',
    'RequiredPlugins'=> array('KarmaBank'=> '0.9.7.1b'),
    'RequiredApplications' => array('Vanilla' => '2.1'),
    'RegisterPermissions' => array('Plugins.MarketPlace.UseStore'),
