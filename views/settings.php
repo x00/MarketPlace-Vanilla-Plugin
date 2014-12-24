@@ -130,7 +130,7 @@ label.Inline{
                echo $this->Form->TextBox('Account', array('value'=>C('Plugins.MarketPlace.Gateway.PayPal.Account',C('Plugins.PremiumAccounts.PayPalAccount',''))));
            echo '<div class="Message">'.T('PayPal ID Message', '
             This is <u>not</u> your Paypal email, but another ID that will help protect your account and prevent spam. For information on where to find Paypal Business / Merchant ID  
-            <a href="https://www.paypal.com/webapps/customerprofile/summary.view">click here</a>. You may need to upgrade you account to a Premier or Business account to access it.').'</div>';
+            <a href="https://www.paypal.com/webapps/customerprofile/summary.view">click here</a>. You may need to upgrade your account to a Premier or Business account to access it.').'</div>';
             ?>
          </li>
          <li>
