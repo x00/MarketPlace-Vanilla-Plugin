@@ -16,7 +16,7 @@
  - Subscription info in profile,
    after purchase subscription
    go to /profile/subscriptions
- - Webhooks callback to handle 
+ - Webhooks callback to handle  missing
    subscription events.
  - Subscription call back to handle
    management of subscription such as
@@ -37,3 +37,6 @@
   0.2.0b
  - MerchantID link fix 
  - Paypal SSL fix
+  0.2.1b
+ - stripe folder missing
+   

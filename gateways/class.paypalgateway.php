@@ -8,8 +8,8 @@ class PayPalGateway{
         $VariableMeta = MarketPlaceAPI::VariableMeta($Sender,$Product,'PayPal');
         $TransMeta = MarketTransactionModel::GetTransactionMeta($TransactionID);
         $QuantityName = GetValue('Quantity',$Sender->MarketPlace->Gateways['PayPal']['Options']['VariableMeta']);
-        $Subscription = Getvalue('Subscription', $Product->Meta)==T('On');
-        $SubscriptionPeriod = Getvalue('Period', $Product->Meta);
+        $Subscription = FALSE;
+        $SubscriptionPeriod = GetValue('Period', $Product->Meta);
         
         ?>
         <form name="_xclick"  action="<?php echo 'https://www.'.(($AccountType)!=='Live'?'sandbox.':'').'paypal.com/cgi-bin/webscr'; ?>" method="post">
