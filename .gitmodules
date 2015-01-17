@@ -1,6 +1,3 @@
-[submodule "git@github.com:stripe/stripe-php.git"]
-	path = git@github.com:stripe/stripe-php.git
-	url = /var/www/test/forumtest21/plugins/MarketPlace/gateways/stripe-php
 [submodule "/var/www/test/forumtest21/plugins/MarketPlace/gateways/stripe-php"]
 	path = /var/www/test/forumtest21/plugins/MarketPlace/gateways/stripe-php
 	url = git@github.com:stripe/stripe-php.git
