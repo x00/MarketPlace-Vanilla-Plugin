@@ -195,12 +195,17 @@ class MarketPlaceUtility {
      *  @return void
      */
 
-    public function DynamicRoute(&$Routes, $Route, $Destination, $Type = 'Internal', $Oneway = FALSE){
+    public function DynamicRoute(&$Routes, $Route, $Destination, $Type = 'Internal', $Oneway = FALSE, $Redirect = FALSE){
         $Key = str_replace('_','/',base64_encode($Route));
         $Routes[$Key] = array($Destination, $Type);
         if($Oneway && $Type == 'Internal'){
             if(strtolower(Gdn::Request()->Path()) && strpos(strtolower($Destination), strtolower(Gdn::Request()->Path()))===0){
-                Gdn::Dispatcher()->Dispatch('Default404');
+                if($Redirect){
+                    Redirect(Url($Redirect, TRUE), 301);
+                }else{
+                    Gdn::Dispatcher()->Dispatch('Default404');
+                }
+                 
                 exit;
             }
         }

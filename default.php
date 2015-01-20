@@ -4,7 +4,7 @@ $PluginInfo['MarketPlace'] = array(
    'Name' => 'MarketPlace',
    'Description' => "Product, store and gateway system",
    'SettingsUrl' => '/dashboard/settings/marketplace',
-   'Version' => '0.2.2b',
+   'Version' => '0.2.3b',
    'RequiredPlugins'=> array('KarmaBank'=> '0.9.7.1b'),
    'RequiredApplications' => array('Vanilla' => '2.1'),
    'RegisterPermissions' => array('Plugins.MarketPlace.UseStore'),
@@ -80,7 +80,7 @@ class MarketPlace extends MarketPlaceUIDomain{
     }
   
     public function Base_BeforeLoadRoutes_Handler($Sender, &$Args){
-        $this->Utility()->DynamicRoute($Args['Routes'],'^'.C('Plugins.MarketPlace.StoreURI','store').'(/.*)?$','vanilla/marketplace$1','Internal', TRUE);
+        $this->Utility()->DynamicRoute($Args['Routes'],'^'.C('Plugins.MarketPlace.StoreURI','store').'(/.*)?$','vanilla/marketplace$1','Internal', TRUE, C('Plugins.MarketPlace.StoreURI'));
     }
     
     /* prevent block of transactions and notifications like private community does */
