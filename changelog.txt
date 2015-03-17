@@ -39,4 +39,6 @@
  - Paypal SSL fix
   0.2.1b
  - stripe folder missing
+  0.2.4b
+ - fix validation of PriceDenominations and Meta
    

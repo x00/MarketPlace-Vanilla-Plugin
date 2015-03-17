@@ -104,6 +104,7 @@ class MarketPlaceSettings {
                                 $MarketProductModel->Validation->AddValidationResult('Currency'.$Currency,sprintf(T('\'%s\' not a valid Currency'),$Currency));
                         }
                     }
+                    
                     $FormValues['Meta']=array();
                     
                     $this->Plgn->API()->ValidateMeta($FormValues,$MarketProductModel,$FormValues['ProductType'],TRUE);
@@ -125,8 +126,12 @@ class MarketPlaceSettings {
                         
                     }    
                     
+                    $FormValuesTemp = $FormValues;
+                    
+                    $FormValuesTemp['PriceDenominations'] = Gdn_Format::Serialize($FormValues['PriceDenominations']);
+                    $FormValuesTemp['Meta'] = Gdn_Format::Serialize($FormValues['Meta']);
                                                 
-                    $MarketProductModel->Validation->Validate($FormValues);
+                    $MarketProductModel->Validation->Validate($FormValuesTemp);
                     $Sender->Form->SetValidationResults($MarketProductModel->Validation->Results());
                     if (count($MarketProductModel->Validation->Results()) == 0) {
                         if(in_array('Subscription',$this->Plgn->API()->ProductTypes[$FormValues['ProductType']]['Options']['RequiredMeta'])){
